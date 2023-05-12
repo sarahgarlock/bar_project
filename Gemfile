@@ -57,7 +57,7 @@ group :development, :test do
   gem "launchy" # save_and_open_page
   gem "capybara" 
   gem "orderly"
-  gem "shoulda-matchers"
+  gem "shoulda-matchers", '~> 5.0'
 end
 
 group :development do

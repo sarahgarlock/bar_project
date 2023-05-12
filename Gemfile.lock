@@ -250,7 +250,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails
-  shoulda-matchers
+  shoulda-matchers (~> 5.0)
   simplecov
   sprockets-rails
   stimulus-rails
