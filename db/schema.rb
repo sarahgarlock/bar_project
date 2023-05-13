@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_184433) do
 
   create_table "kegs", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "beer_type"
     t.boolean "ordered"
     t.integer "abv"
     t.integer "ibu"
