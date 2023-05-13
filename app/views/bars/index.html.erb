@@ -1,4 +1,9 @@
 <h1>Bar Index Page</h1>
+<br>
 <% @bars.each do |bar| %>
-  <p><%= bar.name %></p>
+  <p>Name: <%= bar.name %></p>
+  <p>City: <%= bar.city %></p>
+  <p>Tap Quantity: <%= bar.tap_quantity %></p>
+  <p>Overnight Delivery: <%= bar.overnight_delivery? %></p>
+  <br>
 <% end %>
