@@ -49,7 +49,7 @@ User Story 1, Parent Index Show ALL records of one model
 
 For each parent table
 As a visitor
-When I visit '/bar'
+When I visit '/bars'
 Then I see the name of each parent record in the system
 [X] done
 
