@@ -10,7 +10,6 @@ RSpec.describe "/bars/:bar_id/kegs", type: :feature do
       visit "/bars/#{jacks_bar.id}/kegs"
 
       expect(page).to have_content(jacks_bar.name)
-      # expect(page).to have_content("Bar ID: #{jacks_bar.id}")
       expect(page).to have_content(keg1.name)
       expect(page).to have_content(keg1.beer_type)
       expect(page).to have_content(keg1.ordered)
