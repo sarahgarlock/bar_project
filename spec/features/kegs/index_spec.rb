@@ -28,5 +28,14 @@ RSpec.describe "/kegs", type: :feature do
 # save_and_open_page
 
     end
+    it 'will display Bar\'s link' do
+      jacks_bar = Bar.create!(name: "Jacks Bar", city: "Arvada", tap_quantity: 8, overnight_delivery: false)
+      keg1 = jacks_bar.kegs.create!(name: "Fat Tire", beer_type: "Amber", ordered: false, abv: 5, ibu: 22, price: 140)
+      keg2 = jacks_bar.kegs.create!(name: "VooDoo Ranger Juicy Haze", beer_type: "Hazy IPA", ordered: true, abv: 7, ibu: 41, price: 155, bar_id: jacks_bar.id)
+      visit "/bars"
+      expect(page).to have_link("Bar Index Page", href: "/bars")
+      click_link "Bar Index Page"
+      expect(current_path).to eq("/bars")
+    end
   end
 end
