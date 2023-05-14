@@ -13,7 +13,16 @@
 ActiveRecord::Schema[7.0].define(version: 2023_05_11_184433) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "tap_quantity"
+    t.boolean "overnight_delivery"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "kegs", force: :cascade do |t|
     t.string "name"
     t.string "beer_type"
@@ -26,15 +35,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_184433) do
     t.datetime "updated_at", null: false
     t.index ["bar_id"], name: "index_kegs_on_bar_id"
   end
-  create_table "bars", force: :cascade do |t|
-    t.string "name"
-    t.string "city"
-    t.integer "tap_quantity"
-    t.boolean "overnight_delivery"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 
   add_foreign_key "kegs", "bars"
 end
