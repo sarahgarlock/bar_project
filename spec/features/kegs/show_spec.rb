@@ -14,7 +14,7 @@ RSpec.describe "/kegs/:id" do
       expect(page).to have_content(keg2.abv)
       expect(page).to have_content(keg2.ibu)
       expect(page).to have_content(keg2.price)
-      save_and_open_page
+      # save_and_open_page
     end
   end
 end
