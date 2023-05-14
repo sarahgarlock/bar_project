@@ -49,17 +49,17 @@ User Story 1, Parent Index Show ALL records of one model
 
 For each parent table
 As a visitor
-When I visit '/bar'
+When I visit '/bars'
 Then I see the name of each parent record in the system
 [X] done
 
 User Story 2, Parent Show 
 
 As a visitor
-When I visit '/bar/:id'
+When I visit '/bars/:id'
 Then I see the parent with that id including the parent's attributes
 (data from each column that is on the parent table)
-[ ] done
+[X] done
 
 User Story 3, Child Index 
 
