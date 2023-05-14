@@ -8,11 +8,12 @@ RSpec.describe "/bars/:id" do
       keg2 = jacks_bar.kegs.create!(name: "VooDoo Ranger Juicy Haze", beer_type: "Hazy IPA", ordered: true, abv: 7, ibu: 41, price: 155, bar_id: jacks_bar.id)
 
       visit "/bars/#{jacks_bar.id}"
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content(jacks_bar.name)
       expect(page).to have_content(jacks_bar.city)
       expect(page).to have_content(jacks_bar.tap_quantity)
       expect(page).to have_content(jacks_bar.overnight_delivery)
+      expect(page).to have_content(jacks_bar.keg_count)
     end
 end
