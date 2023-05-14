@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/bars", to: "bars#index"
   get "/bars/:id", to: "bars#show"
   get "/kegs", to: "kegs#index"
+  get "/kegs/:id", to: "kegs#show"
 end

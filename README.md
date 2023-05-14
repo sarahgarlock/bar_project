@@ -72,10 +72,10 @@ Then I see each Child in the system including the Child's attributes
 User Story 4, Child Show 
 
 As a visitor
-When I visit '/child_table_name/:id'
+When I visit '/kegs/:id'
 Then I see the child with that id including the child's attributes
 (data from each column that is on the child table)
-[ ] done
+[X] done
 
 User Story 5, Parent Children Index 
 
