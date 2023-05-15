@@ -2,31 +2,43 @@ require 'rails_helper'
 
 RSpec.describe "/bars", type: :feature do
   describe "as a visitor, when I visit the Bar Index page" do
-    # User Story 1
-    it "displays the name of each bar" do
-      jacks_bar = Bar.create!(name: "Jacks Bar", city: "Arvada", tap_quantity: 8, overnight_delivery: false, created_at: Date.today - 1.day)
-      crow_bar =  Bar.create!(name: "Crow Bar", city: "Wheat Ridge", tap_quantity: 10, overnight_delivery: false, created_at: Date.today)
+    before(:each) do
+      @jacks_bar = Bar.create!(name: "Jacks Bar", city: "Arvada", tap_quantity: 8, overnight_delivery: false, created_at: Date.today - 2.day)
+      @crow_bar =  Bar.create!(name: "Crow Bar", city: "Wheat Ridge", tap_quantity: 10, overnight_delivery: false, created_at: Date.today - 1.day)
+      @local_46 =  Bar.create!(name: "Local 46", city: "Wheat Ridge", tap_quantity: 15, overnight_delivery: true, created_at: Date.today)
       visit "/bars"
-      # save_and_open_page
-      expect(page).to have_content(jacks_bar.name)
-      expect(page).to have_content(crow_bar.name)
-      expect(page).to have_content(jacks_bar.created_at)
-      expect(page).to have_content(crow_bar.created_at)
+    end
+    it "displays the name of each bar" do
+      # User Story 1
+      expect(page).to have_content(@jacks_bar.name)
+      expect(page).to have_content(@crow_bar.name)
+      expect(page).to have_content(@local_46.name)
+    end
+    
+    it "will show in order by when it was created" do
+      # User Story 6
+      expect(page).to have_content(@jacks_bar.created_at)
+      expect(page).to have_content(@crow_bar.created_at)
+      expect(page).to have_content(@local_46.created_at)
 
-      expect(jacks_bar.name).to appear_before(crow_bar.name)
+      expect(@jacks_bar.name).to appear_before(@crow_bar.name)
+      expect(@crow_bar.name).to appear_before(@local_46.name)
     end
 
-    it 'will display another link' do
-      jacks_bar = Bar.create!(name: "Jacks Bar", city: "Arvada", tap_quantity: 8, overnight_delivery: false)
-      keg1 = jacks_bar.kegs.create!(name: "Fat Tire", beer_type: "Amber", ordered: false, abv: 5, ibu: 22, price: 140)
-      keg2 = jacks_bar.kegs.create!(name: "VooDoo Ranger Juicy Haze", beer_type: "Hazy IPA", ordered: true, abv: 7, ibu: 41, price: 155, bar_id: jacks_bar.id)
-      
-      visit "/bars"
-      expect(page).to have_link("Keg Index Page", href: "/kegs")
+    it "will display Keg\'s index link at the top" do
+      # User Story 8
+      expect(page).to have_link("Keg Index Page")
       
       click_link "Keg Index Page"
       expect(current_path).to eq("/kegs")
+    end
 
+    it "will display Bar\'s index link at the top" do
+      # User Story 9
+      expect(page).to have_link("Bar Index Page")
+
+      click_link "Bar Index Page"
+      expect(current_path).to eq("/bars")
     end
 
   end
