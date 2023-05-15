@@ -28,6 +28,15 @@ RSpec.describe "/bars/:id", type: :feature do
       visit "/bars/#{@crow_bar.id}"
       expect(page).to have_content("#{@crow_bar.keg_count}")
     end
+
+    it "should have a link to the index of Kegs that belong to the Bar" do
+      # User Story 10
+      visit "/bars/#{@jacks_bar.id}"
+      expect(page).to have_link("View this bars kegs")
+
+      click_link "View this bars kegs"
+      expect(current_path).to eq("/bars/#{@jacks_bar.id}/kegs")
+    end
   end
 
   describe "when I visit any page" do
@@ -47,8 +56,6 @@ RSpec.describe "/bars/:id", type: :feature do
 
       click_link "Bar Index Page"
       expect(current_path).to eq("/bars")
-
-      save_and_open_page
     end
   end
 end
