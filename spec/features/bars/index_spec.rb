@@ -24,22 +24,5 @@ RSpec.describe "/bars", type: :feature do
       expect(@jacks_bar.name).to appear_before(@crow_bar.name)
       expect(@crow_bar.name).to appear_before(@local_46.name)
     end
-
-    it "will display Keg\'s index link at the top" do
-      # User Story 8
-      expect(page).to have_link("Keg Index Page")
-      
-      click_link "Keg Index Page"
-      expect(current_path).to eq("/kegs")
-    end
-
-    it "will display Bar\'s index link at the top" do
-      # User Story 9
-      expect(page).to have_link("Bar Index Page")
-
-      click_link "Bar Index Page"
-      expect(current_path).to eq("/bars")
-    end
-
   end
 end

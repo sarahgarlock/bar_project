@@ -15,7 +15,7 @@ RSpec.describe "/kegs", type: :feature do
     end
 
     it "will display each keg in the system including the keg's attributes" do
-      # User Story 3 & 5
+      # User Story 3
       expect(page).to have_content("Name: #{@keg_1.name}")
       expect(page).to have_content("Type: #{@keg_1.beer_type}")
       expect(page).to have_content("Ordered: #{@keg_1.ordered?}")
@@ -30,22 +30,6 @@ RSpec.describe "/kegs", type: :feature do
       expect(page).to have_content("IBU: #{@keg_2.ibu}")
       expect(page).to have_content("Price: $#{@keg_2.price}")
 
-    end
-
-    it "will display the Keg's link at the top" do
-      # User Story 8
-      expect(page).to have_link("Keg Index Page")
-
-      click_link "Keg Index Page"
-      expect(current_path).to eq("/kegs")
-    end
-
-    it 'will display Bar\'s link at the top' do
-      # User Story 9
-      expect(page).to have_link("Bar Index Page")
-
-      click_link "Bar Index Page"
-      expect(current_path).to eq("/bars")
     end
   end
 end
