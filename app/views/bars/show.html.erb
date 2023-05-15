@@ -8,4 +8,5 @@
   <p>Tap Quantity: <%= @bar.tap_quantity %></p>
   <p>Overnight Delivery: <%= @bar.overnight_delivery %></p>
   <p>Keg Count: <%= @bar.keg_count %>
+  <p><%= link_to "View this bars kegs", "/bars/#{@bar.id}/kegs" %>
 <br>
