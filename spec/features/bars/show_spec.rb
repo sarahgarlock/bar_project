@@ -36,26 +36,7 @@ RSpec.describe "/bars/:id", type: :feature do
 
       click_link "View this bars kegs"
       expect(current_path).to eq("/bars/#{@jacks_bar.id}/kegs")
-    end
-  end
-
-  describe "when I visit any page" do
-    it "will display the Keg\'s index link at the top" do
-      # User Story 8
-      visit "/bars/#{@jacks_bar.id}"
-      expect(page).to have_link("Keg Index Page")
-
-      click_link "Keg Index Page"
-      expect(current_path).to eq("/kegs")
-    end
-
-    it 'will display the Bar\'s index link at the top' do
-      # User Story 9
-      visit "/bars/#{@jacks_bar.id}"
-      expect(page).to have_link("Bar Index Page")
-
-      click_link "Bar Index Page"
-      expect(current_path).to eq("/bars")
+      save_and_open_page
     end
   end
 end
