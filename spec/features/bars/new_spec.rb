@@ -17,7 +17,6 @@ RSpec.describe '/bars/new' do
       expect(page).to have_content("Wheat Ridge")
       expect(page).to have_content(3)
       expect(page).to have_content(false)
-      save_and_open_page
     end
   end
 end

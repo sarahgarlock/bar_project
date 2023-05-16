@@ -30,6 +30,7 @@ RSpec.describe "/bars/:bar_id/kegs", type: :feature do
     end
     
     it "will provide a link to add a new keg for that parent " do
+      # User Story 13
       visit "/bars/#{@jacks_bar.id}/kegs"
       expect(page).to have_link("Create New Keg")
       click_link "Create New Keg"
