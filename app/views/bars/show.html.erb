@@ -3,6 +3,8 @@
   <p>City: <%= @bar.city %></p>
   <p>Tap Quantity: <%= @bar.tap_quantity %></p>
   <p>Overnight Delivery: <%= @bar.overnight_delivery %></p>
-  <p>Keg Count: <%= @bar.keg_count %>
-  <p><%= link_to "View this bars kegs", "/bars/#{@bar.id}/kegs" %>
+  <p>Keg Count: <%= @bar.keg_count %></p>
+  <%= link_to "View this bars kegs", "/bars/#{@bar.id}/kegs" %>
+  <%# <%= link_to "Update Bar", "/bars/#{@bar.id}/edit" %> 
+  <a href="/bars/<%= @bar.id %>/edit">Update Bar</a>
 <br>

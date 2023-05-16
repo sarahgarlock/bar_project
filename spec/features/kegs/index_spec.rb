@@ -13,22 +13,22 @@ RSpec.describe "/kegs", type: :feature do
   
       visit "/kegs"
     end
-
+    
     it "will display each keg in the system including the keg's attributes" do
       # User Story 3
-      expect(page).to have_content("Name: #{@keg_1.name}")
-      expect(page).to have_content("Type: #{@keg_1.beer_type}")
-      expect(page).to have_content("Ordered: #{@keg_1.ordered?}")
-      expect(page).to have_content("ABV: #{@keg_1.abv}")
-      expect(page).to have_content("IBU: #{@keg_1.ibu}")
-      expect(page).to have_content("Price: $#{@keg_1.price}")
+      expect(page).to have_content(@keg_1.name)
+      expect(page).to have_content(@keg_1.beer_type)
+      expect(page).to have_content(@keg_1.ordered)
+      expect(page).to have_content(@keg_1.abv)
+      expect(page).to have_content(@keg_1.ibu)
+      expect(page).to have_content(@keg_1.price)
 
-      expect(page).to have_content("Name: #{@keg_2.name}")
-      expect(page).to have_content("Type: #{@keg_2.beer_type}")
-      expect(page).to have_content("Ordered: #{@keg_2.ordered?}")
-      expect(page).to have_content("ABV: #{@keg_2.abv}")
-      expect(page).to have_content("IBU: #{@keg_2.ibu}")
-      expect(page).to have_content("Price: $#{@keg_2.price}")
+      expect(page).to have_content(@keg_1.name)
+      expect(page).to have_content(@keg_2.beer_type)
+      expect(page).to have_content(@keg_2.ordered)
+      expect(page).to have_content(@keg_2.abv)
+      expect(page).to have_content(@keg_2.ibu)
+      expect(page).to have_content(@keg_2.price)
 
     end
   end

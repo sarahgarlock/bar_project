@@ -1,16 +1,11 @@
-  <h3>Create New Bar:</h3>
-<%= form_with url: "/bars", method: :post, local: true do |form| %>
+<%= form_with url: "/bars/#{@bar.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %><br>
-<br>
   <%= form.label :city %>
   <%= form.text_field :city %><br>
-<br>
   <%= form.label :tap_quantity %>
   <%= form.text_field :tap_quantity %><br>
-<br>
   <%= form.label :overnight_delivery %>
   <%= form.text_field :overnight_delivery %><br>
-  <br>
-  <%= form.submit "Create Bar" %>
+  <%= form.submit "Update This Bar" %>
 <% end %>

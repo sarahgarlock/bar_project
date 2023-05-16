@@ -16,8 +16,21 @@ class BarsController < ApplicationController
     redirect_to "/bars"
   end
 
+  def edit
+    @bar = Bar.find(params[:id])
+  end
+
+  def update
+
+    bar = Bar.find(params[:id])
+    bar.update(bar_params)
+    bar.save
+    redirect_to "/bars/#{bar.id}"
+  end
+
   private
     def bar_params
-      params.permit(:name)
+      params.permit(:name, :city, :tap_quantity, :overnight_delivery)
     end
+
 end
