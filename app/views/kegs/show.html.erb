@@ -4,3 +4,5 @@
 <p>ABV: <%= @keg.abv %>%</p>
 <p>IBU: <%= @keg.ibu %></p>
 <p>Price: $<%= @keg.price %></p>
+
+<p><%= link_to "Update Keg", "/kegs/#{@keg.id}/edit" %></p>
