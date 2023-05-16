@@ -100,7 +100,7 @@ User Story 7, Parent Child Count
 As a visitor
 When I visit a parent's show page
 I see a count of the number of children associated with this parent
-[ ] done
+[X] done
 
 
 User Story 8, Child Index Link
@@ -150,7 +150,7 @@ And I click the button to submit the form
 Then a `PATCH` request is sent to '/parents/:id',
 the parent's info is updated,
 and I am redirected to the Parent's Show page where I see the parent's updated info
-[ ] done
+[X] done
 
 User Story 13, Parent Child Creation 
 
@@ -164,7 +164,7 @@ And I click the button "Create Child"
 Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
 a new child object/row is created for that parent,
 and I am redirected to the Parent Childs Index page where I can see the new child listed
-[ ] done
+[X] done
 
 User Story 14, Child Update 
 

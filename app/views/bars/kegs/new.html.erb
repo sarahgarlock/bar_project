@@ -1,15 +1,22 @@
 <%= form_with url: "/bars/#{@bar.id}/kegs", method: :post, local: true do |form| %>
+  <br>
   <%= form.label :name %>
   <%= form.text_field :name %><br>
+  <br>
   <%= form.label :beer_type %>
   <%= form.text_field :beer_type %><br>
+  <br>
   <%= form.label :ordered %>
   <%= form.text_field :ordered %><br>
+  <br>
   <%= form.label :abv %>
   <%= form.text_field :abv %><br>
+  <br>
   <%= form.label :ibu %>
   <%= form.text_field :ibu %><br>
+  <br>
   <%= form.label :price %>
   <%= form.text_field :price %><br>
+  <br>
   <%= form.submit "Create Keg" %>
 <% end %>
