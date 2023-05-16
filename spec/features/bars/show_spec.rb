@@ -36,7 +36,15 @@ RSpec.describe "/bars/:id", type: :feature do
 
       click_link "View this bars kegs"
       expect(current_path).to eq("/bars/#{@jacks_bar.id}/kegs")
-      save_and_open_page
+    end
+
+    it 'has a link to update the bar' do
+      # User Story 12
+      visit "/bars/#{@jacks_bar.id}"
+      expect(page).to have_link("Update Bar")
+
+      click_link "Update Bar"
+      expect(current_path).to eq("/bars/#{@jacks_bar.id}/edit")
     end
   end
 end
