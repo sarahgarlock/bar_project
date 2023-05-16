@@ -1,7 +1,7 @@
 <h1>Kegs Index Page</h1>
 <br>
 <% @kegs.each do |keg| %>
-  <h2>Name: <%= keg.name %></h2>
+  <h2>Name: <%= link_to "#{keg.name}", "/kegs/#{keg.id}" %></h2>
   <p>Beer Type: <%= keg.beer_type %></p>
   <p>Ordered: <%= keg.ordered? %></p>
   <p>ABV: <%= keg.abv %></p>
