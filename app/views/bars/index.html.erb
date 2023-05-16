@@ -3,7 +3,7 @@
 <br>
 <% @bars.each do |bar| %>
   <p>Name: <%= link_to "#{bar.name}", "/bars/#{bar.id}" %></p>
-  <p>City: <%= link_to bar.city %></p>
+  <p>City: <%= bar.city %></p>
   <p>Tap Quantity: <%= bar.tap_quantity %></p>
   <p>Overnight Delivery: <%= bar.overnight_delivery %></p>
   <p>Created At: <%= bar.created_at %></p>
