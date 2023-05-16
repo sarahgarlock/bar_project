@@ -41,5 +41,14 @@ RSpec.describe "/kegs/:id" do
       expect(page).to have_content(@keg_3.ibu)
       expect(page).to have_content(@keg_3.price)
     end
+
+    it "can update kegs with a link" do
+      # User Story 14
+      visit "/kegs/#{@keg_1.id}"
+      expect(page).to have_link("Update Keg")
+      click_link "Update Keg"
+
+      expect(current_path).to eq("/kegs/#{@keg_1.id}/edit")
+    end
   end
 end
